@@ -1,7 +1,7 @@
 package mod.azure.logbegone;
 
 import com.google.gson.*;
-import mod.azure.logbegone.platform.Services;
+import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 
 import java.io.*;
@@ -42,7 +42,7 @@ public class CommonMod {
     }
 
     private static JsonObject getConfig() {
-        File config = new File(Services.PLATFORM.getConfigLocation() + "/logbegone.json");
+        File config = new File(FabricLoader.getInstance().getConfigDir() + "/logbegone.json");
 
         if (!config.exists()) {
             try {
@@ -62,7 +62,7 @@ public class CommonMod {
     }
 
     private static void saveConfig(JsonObject config) {
-        File configFile = new File(Services.PLATFORM.getConfigLocation() + "/logbegone.json");
+        File configFile = new File(FabricLoader.getInstance().getConfigDir() + "/logbegone.json");
 
         try (FileWriter writer = new FileWriter(configFile)) {
             new Gson().toJson(config, writer);

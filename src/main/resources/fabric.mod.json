@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "logbegone",
+  "version": "${version}",
+  "name": "Log Begone",
+  "description": "I hate log spam, don't you?",
+  "authors": [
+    "AzureDoom"
+  ],
+  "contributors": [
+    "Bravarly (Shut Up Console)",
+    "Samouxx (26.x port)"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Samouxx/Log-Begone",
+    "issues": "https://github.com/Samouxx/Log-Begone/issues",
+    "sources": "https://github.com/Samouxx/Log-Begone"
+  },
+  "license": "GPL-3.0-only",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "preLaunch": [
+      "mod.azure.logbegone.FabricLibMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "java": ">=25",
+    "minecraft": "~${minecraft_version}"
+  }
+}
